@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /pages/register.html
+Disallow: /pages/login.html
+
+Sitemap: https://winnfieldtalks.com/sitemap.xml

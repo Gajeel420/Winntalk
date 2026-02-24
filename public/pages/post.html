@@ -4,9 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Post — Winnfield Talks</title>
+  <meta name="description" content="Read and reply to posts on Winnfield Talks — the anonymous voice of Winn Parish, Louisiana." />
+  <meta property="og:title" content="Winnfield Talks" />
+  <meta property="og:description" content="The anonymous voice of Winn Parish, Louisiana. No names. No filters." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://winnfieldtalks.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
 <body>
 
@@ -21,6 +27,11 @@
         <button class="search-btn" onclick="doSearch()">⌕</button>
       </div>
       <div class="nav-actions" id="navActions"></div>
+      <button class="nav-toggle" id="navToggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/pages/login.html" class="btn btn-ghost">Sign In</a>
+      <a href="/pages/register.html" class="btn btn-primary">Join Free</a>
     </div>
   </nav>
 
@@ -78,6 +89,35 @@
       </div>
     </div>
   </div>
+
+  <!-- Search Results Modal -->
+  <div class="modal-overlay hidden" id="searchModal" onclick="closeSearch()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 id="searchModalTitle">Search Results</h3>
+        <button class="modal-close" onclick="closeSearch()">✕</button>
+      </div>
+      <div class="modal-body" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon">🏛️</span>
+        <strong>Winnfield Talks</strong>
+        <span class="footer-tag">Winn Parish, Louisiana</span>
+      </div>
+      <nav class="footer-links">
+        <a href="/pages/tos.html">Terms of Service</a>
+        <a href="/pages/disclaimer.html">Legal Disclaimer</a>
+        <a href="/pages/privacy.html">Privacy Policy</a>
+        <a href="mailto:admin@winnfieldtalks.com">Contact Admin</a>
+      </nav>
+      <p class="footer-copy">© 2026 Winnfield Talks. All user posts are the sole responsibility of their authors.<br />This site does not represent the views of the administrators or the Town of Winnfield.</p>
+    </div>
+  </footer>
 
   <script src="/js/main.js"></script>
   <script src="/js/post.js"></script>

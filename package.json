@@ -4,7 +4,7 @@
   "description": "Winnfield Talks - Anonymous message board for Winnfield, Louisiana",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "NODE_ENV=production node server.js",
     "dev": "node server.js"
   },
   "dependencies": {
