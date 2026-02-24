@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post — Winnfield Talks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <span class="brand-icon">🏛️</span>
+        <span class="brand-text">Winnfield<span class="brand-accent">Talks</span></span>
+      </a>
+      <div class="nav-search">
+        <input type="text" id="searchInput" placeholder="Search..." class="search-input" />
+        <button class="search-btn" onclick="doSearch()">⌕</button>
+      </div>
+      <div class="nav-actions" id="navActions"></div>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    <div class="content-with-sidebar">
+
+      <!-- Post & Replies -->
+      <article class="post-view" id="postView">
+        <div class="skeleton-post" style="height:200px;"></div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <h3 id="sidebarBoardName">Board</h3>
+          <p id="sidebarBoardDesc"></p>
+          <a id="sidebarBoardLink" href="#" class="btn btn-ghost w-full" style="margin-top:.75rem;">View All Posts</a>
+        </div>
+        <div class="sidebar-card rules-card">
+          <h3>Posting Rules</h3>
+          <ul class="rules-list">
+            <li>⚖️ Your reply = your legal responsibility</li>
+            <li>🚫 No threats or harassment</li>
+            <li>🔞 18+ content only</li>
+            <li>📋 <a href="/pages/tos.html">Full TOS</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Report Modal -->
+  <div class="modal-overlay hidden" id="reportModal">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3>Report Content</h3>
+        <button class="modal-close" onclick="closeReport()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Reason for Report</label>
+          <select id="reportReason" class="form-input">
+            <option value="illegal">Illegal content</option>
+            <option value="harassment">Harassment / threats</option>
+            <option value="minors">Content involving minors</option>
+            <option value="doxxing">Doxxing / private info</option>
+            <option value="spam">Spam</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="modal-footer-actions">
+          <button class="btn btn-ghost" onclick="closeReport()">Cancel</button>
+          <button class="btn btn-danger" onclick="submitReport()">Submit Report</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/post.js"></script>
+</body>
+</html>

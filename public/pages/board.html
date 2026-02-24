@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Board — Winnfield Talks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <span class="brand-icon">🏛️</span>
+        <span class="brand-text">Winnfield<span class="brand-accent">Talks</span></span>
+      </a>
+      <div class="nav-search">
+        <input type="text" id="searchInput" placeholder="Search posts..." class="search-input" />
+        <button class="search-btn" onclick="doSearch()">⌕</button>
+      </div>
+      <div class="nav-actions" id="navActions"></div>
+    </div>
+  </nav>
+
+  <!-- Board Header -->
+  <div class="board-hero" id="boardHero">
+    <div class="board-hero-inner">
+      <nav class="breadcrumb">
+        <a href="/">Home</a> <span>›</span> <span id="boardName">Board</span>
+      </nav>
+      <div class="board-hero-title">
+        <span id="boardIcon" class="board-hero-icon">📋</span>
+        <div>
+          <h1 id="boardTitle">Loading...</h1>
+          <p id="boardDesc"></p>
+        </div>
+      </div>
+      <div class="board-hero-meta">
+        <span id="boardPostCount">— posts</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="main-container">
+    <div class="content-with-sidebar">
+
+      <section class="board-content">
+        <!-- Toolbar -->
+        <div class="board-toolbar">
+          <div class="feed-sort" id="feedSort">
+            <button class="sort-btn active" data-sort="recent" onclick="loadBoard('recent')">Recent</button>
+            <button class="sort-btn" data-sort="hot" onclick="loadBoard('hot')">Hot</button>
+          </div>
+          <button class="btn btn-primary" id="newPostBtn" onclick="openNewPost()">
+            + New Post
+          </button>
+        </div>
+
+        <!-- Posts List -->
+        <div class="posts-list" id="boardPosts">
+          <div class="skeleton-post"></div>
+          <div class="skeleton-post"></div>
+          <div class="skeleton-post"></div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination"></div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="sidebar-card cta-card" id="sidebarCta">
+          <h3>Got Something to Say?</h3>
+          <p>Post anonymously on this board.</p>
+          <button class="btn btn-primary w-full" onclick="openNewPost()">New Post</button>
+        </div>
+        <div class="sidebar-card rules-card">
+          <h3>Reminder</h3>
+          <ul class="rules-list">
+            <li>🔞 18+ only</li>
+            <li>⚖️ Your posts = your legal responsibility</li>
+            <li>🚫 No minors, no threats, no doxxing</li>
+            <li>📋 <a href="/pages/tos.html">Full TOS</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- New Post Modal -->
+  <div class="modal-overlay hidden" id="newPostModal">
+    <div class="modal modal--lg" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3>New Post</h3>
+        <button class="modal-close" onclick="closeNewPost()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="post-disclaimer">
+          <strong>⚖️ Reminder:</strong> You are solely responsible for the content you post. False statements of fact about real people may be defamatory. Label opinions clearly.
+        </div>
+        <form id="newPostForm" onsubmit="submitPost(event)">
+          <div class="form-group">
+            <label class="form-label">Title <span class="char-count" id="titleCount">0/200</span></label>
+            <input type="text" id="postTitle" class="form-input" placeholder="What's the subject?" maxlength="200" oninput="updateCount('postTitle','titleCount',200)" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Post <span class="char-count" id="bodyCount">0/10,000</span></label>
+            <textarea id="postBody" class="form-textarea" placeholder="Spill the tea..." maxlength="10000" rows="8" oninput="updateCount('postBody','bodyCount',10000)" required></textarea>
+          </div>
+          <div id="postError" class="form-error hidden"></div>
+          <div class="modal-footer-actions">
+            <button type="button" class="btn btn-ghost" onclick="closeNewPost()">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="submitPostBtn">Post It</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Auth Required Modal -->
+  <div class="modal-overlay hidden" id="authModal">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3>Sign In to Post</h3>
+        <button class="modal-close" onclick="document.getElementById('authModal').classList.add('hidden')">✕</button>
+      </div>
+      <div class="modal-body" style="text-align:center; padding: 2rem;">
+        <p style="margin-bottom:1.5rem;">You need a free account to post. No real name required — just an email.</p>
+        <a href="/pages/register.html" class="btn btn-primary">Create Free Account</a>
+        <p style="margin-top:1rem;"><a href="/pages/login.html">Already have an account? Sign in</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/board.js"></script>
+</body>
+</html>
