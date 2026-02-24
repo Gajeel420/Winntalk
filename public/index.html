@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Winnfield Talks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <meta name="description" content="Winnfield Talks – The anonymous voice of Winn Parish, Louisiana." />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <span class="brand-icon">🏛️</span>
+        <span class="brand-text">Winnfield<span class="brand-accent">Talks</span></span>
+      </a>
+      <div class="nav-search">
+        <input type="text" id="searchInput" placeholder="Search posts..." class="search-input" />
+        <button class="search-btn" onclick="doSearch()">⌕</button>
+      </div>
+      <div class="nav-actions" id="navActions">
+        <a href="/pages/login.html" class="btn btn-ghost">Sign In</a>
+        <a href="/pages/register.html" class="btn btn-primary">Join Free</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/pages/login.html" class="btn btn-ghost">Sign In</a>
+      <a href="/pages/register.html" class="btn btn-primary">Join Free</a>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">📍 Winn Parish · Deep in the Longleaf Pines</div>
+      <h1 class="hero-title">Winnfield Talks</h1>
+      <p class="hero-sub">The anonymous voice rising through the fog. No names. No filters. Just Winnfield — raw and uncut.</p>
+      <div class="hero-actions">
+        <a href="/pages/register.html" class="btn btn-primary btn-lg">Start Posting — Free</a>
+        <a href="#boards" class="btn btn-outline btn-lg">Browse Boards</a>
+      </div>
+    </div>
+    <div class="hero-ticker" id="heroTicker">
+      <span class="ticker-label">🔥 Trending:</span>
+      <div class="ticker-track" id="tickerTrack">Loading latest posts...</div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-container">
+
+    <!-- BOARDS GRID -->
+    <section id="boards" class="section">
+      <div class="section-header">
+        <h2 class="section-title">Browse Boards</h2>
+        <p class="section-sub">Pick your topic and dive in</p>
+      </div>
+      <div class="boards-grid" id="boardsGrid">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </section>
+
+    <!-- RECENT POSTS + SIDEBAR -->
+    <div class="content-with-sidebar">
+      <section class="section main-feed">
+        <div class="section-header-row">
+          <h2 class="section-title">Recent Activity</h2>
+          <div class="feed-sort" id="feedSort">
+            <button class="sort-btn active" data-sort="recent">Recent</button>
+            <button class="sort-btn" data-sort="trending">Trending</button>
+          </div>
+        </div>
+        <div class="posts-list" id="recentPosts">
+          <div class="skeleton-post"></div>
+          <div class="skeleton-post"></div>
+          <div class="skeleton-post"></div>
+          <div class="skeleton-post"></div>
+          <div class="skeleton-post"></div>
+        </div>
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <!-- Post CTA -->
+        <div class="sidebar-card cta-card" id="sidebarCta">
+          <h3>Got the Tea?</h3>
+          <p>Share what Winnfield is talking about. Completely anonymous — no real name required.</p>
+          <a href="/pages/register.html" class="btn btn-primary w-full">Post Anonymously</a>
+        </div>
+
+        <!-- Rules -->
+        <div class="sidebar-card rules-card">
+          <h3>Community Standards</h3>
+          <ul class="rules-list">
+            <li>🔞 Adults only — 18+</li>
+            <li>❌ No content involving minors</li>
+            <li>⚖️ Opinions ≠ statements of fact</li>
+            <li>🚫 No calls to violence</li>
+            <li>🛡️ We cooperate with law enforcement</li>
+            <li>📋 <a href="/pages/tos.html">Full Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Stats -->
+        <div class="sidebar-card stats-card">
+          <h3>Board Stats</h3>
+          <div class="stats-grid" id="statsGrid">
+            <div><span class="stat-num" id="statPosts">—</span><span class="stat-label">Posts</span></div>
+            <div><span class="stat-num" id="statBoards">6</span><span class="stat-label">Boards</span></div>
+          </div>
+        </div>
+
+        <!-- Legal blurb -->
+        <div class="sidebar-card legal-mini">
+          <p>Winnfield Talks is a user-generated content platform protected by 47 U.S.C. § 230. Operators are not liable for third-party content. <a href="/pages/tos.html">TOS</a> · <a href="/pages/disclaimer.html">Legal</a></p>
+        </div>
+      </aside>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon">🏛️</span>
+        <strong>Winnfield Talks</strong>
+        <span class="footer-tag">Winn Parish, Louisiana</span>
+      </div>
+      <nav class="footer-links">
+        <a href="/pages/tos.html">Terms of Service</a>
+        <a href="/pages/disclaimer.html">Legal Disclaimer</a>
+        <a href="/pages/privacy.html">Privacy Policy</a>
+        <a href="mailto:admin@winnfieldtalks.com">Contact Admin</a>
+      </nav>
+      <p class="footer-copy">© 2024 Winnfield Talks. All user posts are the sole responsibility of their authors.<br />This site does not represent the views of the administrators or the Town of Winnfield.</p>
+    </div>
+  </footer>
+
+  <!-- Search Results Modal -->
+  <div class="modal-overlay" id="searchModal" onclick="closeSearch()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 id="searchModalTitle">Search Results</h3>
+        <button class="modal-close" onclick="closeSearch()">✕</button>
+      </div>
+      <div class="modal-body" id="searchResults"></div>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

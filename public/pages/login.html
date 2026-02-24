@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — Winnfield Talks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="auth-page">
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <span class="brand-icon">🏛️</span>
+        <span class="brand-text">Winnfield<span class="brand-accent">Talks</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="auth-main">
+    <div class="auth-container auth-container--sm">
+      <div class="auth-header">
+        <h1 class="auth-title">Welcome Back</h1>
+        <p class="auth-sub">Sign in to post anonymously</p>
+      </div>
+
+      <form class="auth-form" id="loginForm" onsubmit="submitLogin(event)">
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="you@example.com" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="input-reveal">
+            <input type="password" id="loginPassword" class="form-input" placeholder="Your password" required autocomplete="current-password" />
+            <button type="button" class="reveal-btn" onclick="toggleReveal('loginPassword', this)">👁</button>
+          </div>
+        </div>
+
+        <div id="loginError" class="form-error hidden"></div>
+
+        <button type="submit" class="btn btn-primary w-full btn-lg" id="loginBtn">
+          Sign In
+        </button>
+      </form>
+
+      <p class="auth-alt">Don't have an account? <a href="/pages/register.html">Join free</a></p>
+
+      <div class="auth-divider"><span>Your privacy</span></div>
+
+      <div class="anon-notice">
+        <span class="anon-icon">🔒</span>
+        <div>
+          <strong>Anonymous by Design</strong>
+          <p>Your real identity is never visible to other users. Only your randomly generated username is shown.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/main.js"></script>
+  <script>
+    function toggleReveal(inputId) {
+      const input = document.getElementById(inputId);
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    async function submitLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      const errEl = document.getElementById('loginError');
+      const btn = document.getElementById('loginBtn');
+
+      errEl.classList.add('hidden');
+      btn.disabled = true;
+      btn.textContent = 'Signing in...';
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+
+        if (!res.ok) {
+          errEl.textContent = data.error || 'Login failed.';
+          errEl.classList.remove('hidden');
+          btn.disabled = false;
+          btn.textContent = 'Sign In';
+          return;
+        }
+
+        localStorage.setItem('wt_token', data.token);
+        localStorage.setItem('wt_user', JSON.stringify(data.user));
+        window.location.href = '/';
+      } catch (err) {
+        errEl.textContent = 'Network error. Please try again.';
+        errEl.classList.remove('hidden');
+        btn.disabled = false;
+        btn.textContent = 'Sign In';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Winnfield Talks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="auth-page">
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <span class="brand-icon">🏛️</span>
+        <span class="brand-text">Winnfield<span class="brand-accent">Talks</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="auth-main">
+    <div class="auth-container">
+
+      <!-- Step 1: Legal Disclaimer -->
+      <div class="auth-step active" id="step1">
+        <div class="auth-header">
+          <div class="step-indicator">
+            <span class="step active">1</span>
+            <span class="step-line"></span>
+            <span class="step">2</span>
+            <span class="step-line"></span>
+            <span class="step">3</span>
+          </div>
+          <h1 class="auth-title">Legal Disclaimer</h1>
+          <p class="auth-sub">Read carefully before proceeding</p>
+        </div>
+
+        <div class="disclaimer-box">
+          <div class="disclaimer-scroll">
+            <h2>IMPORTANT LEGAL DISCLAIMER</h2>
+            <p>This disclaimer constitutes a legally binding agreement between you ("User") and Winnfield Talks ("Platform," "we," "us"). By registering, you acknowledge that you have read, understood, and agree to the following:</p>
+
+            <h3>1. User-Generated Content & Section 230 Notice</h3>
+            <p>Winnfield Talks is an interactive computer service as defined under 47 U.S.C. § 230 of the Communications Decency Act. The Platform hosts user-generated content and is NOT the publisher or speaker of any content posted by users. Operators and administrators of this Platform are NOT liable for content posted by third parties.</p>
+
+            <h3>2. You Are Solely Responsible for Your Posts</h3>
+            <p>YOU, as the author of any content you post, bear full legal responsibility for that content. You acknowledge that posting false statements of fact presented as true, content intended to harass or defame, or content that violates any applicable law may expose YOU to civil and/or criminal liability.</p>
+
+            <h3>3. Defamation & False Statements</h3>
+            <p>You agree NOT to post false statements of fact about identifiable persons presented as true. Opinion, satire, and commentary are protected speech; however, false factual claims about real people can constitute defamation under Louisiana Civil Code. You accept full personal liability for any such claims you publish.</p>
+
+            <h3>4. No Harassment, Threats, or Incitement</h3>
+            <p>You agree not to post content that: constitutes criminal harassment or cyberstalking under Louisiana R.S. 14:40.3; threatens physical harm to any person; incites violence or illegal activity; or constitutes doxxing (publishing private identifying information about a person without their consent).</p>
+
+            <h3>5. Content Involving Minors is Strictly Prohibited</h3>
+            <p>Any content that sexualizes, targets, identifies, or endangers persons under 18 years of age is absolutely prohibited and will be reported to law enforcement immediately, including the National Center for Missing & Exploited Children (NCMEC).</p>
+
+            <h3>6. Law Enforcement Cooperation</h3>
+            <p>Winnfield Talks WILL comply with valid subpoenas, court orders, and law enforcement requests for user information to the fullest extent required by law. While we do not proactively monitor content, we maintain server logs and account information that may be disclosed pursuant to lawful process. <strong>This platform does not provide anonymity from law enforcement.</strong></p>
+
+            <h3>7. Age Requirement</h3>
+            <p>You must be at least 18 years of age to register. By proceeding, you represent and warrant that you are 18 or older.</p>
+
+            <h3>8. Content Moderation</h3>
+            <p>We reserve the right, but are not obligated, to remove content that violates our Terms of Service, applicable law, or that we determine in our sole discretion to be harmful. Removal of content does not constitute admission of liability on the part of the Platform.</p>
+
+            <h3>9. Indemnification</h3>
+            <p>You agree to defend, indemnify, and hold harmless Winnfield Talks, its administrators, and affiliated persons from any claims, damages, losses, liabilities, or expenses (including attorneys' fees) arising from your use of the Platform, your posted content, or your violation of these terms.</p>
+
+            <h3>10. Governing Law</h3>
+            <p>This agreement is governed by the laws of the State of Louisiana. Any disputes shall be resolved in the courts of Winn Parish, Louisiana.</p>
+          </div>
+
+          <div class="disclaimer-checks">
+            <label class="check-item">
+              <input type="checkbox" id="disclaimerCheck" />
+              <span class="checkmark"></span>
+              <span>I have read and understand this Legal Disclaimer. I accept full personal responsibility for any content I post on Winnfield Talks.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" id="ageCheck" />
+              <span class="checkmark"></span>
+              <span>I confirm that I am <strong>18 years of age or older</strong>.</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="btn btn-primary w-full btn-lg" id="step1Next" onclick="goToStep2()" disabled>
+          I Understand — Continue to Terms of Service →
+        </button>
+        <p class="auth-alt">Already have an account? <a href="/pages/login.html">Sign in</a></p>
+      </div>
+
+      <!-- Step 2: Terms of Service -->
+      <div class="auth-step" id="step2">
+        <div class="auth-header">
+          <div class="step-indicator">
+            <span class="step done">✓</span>
+            <span class="step-line active"></span>
+            <span class="step active">2</span>
+            <span class="step-line"></span>
+            <span class="step">3</span>
+          </div>
+          <h1 class="auth-title">Terms of Service</h1>
+          <p class="auth-sub">Our rules for using the platform</p>
+        </div>
+
+        <div class="disclaimer-box">
+          <div class="disclaimer-scroll">
+            <h2>WINNFIELD TALKS — TERMS OF SERVICE</h2>
+            <p><em>Effective Date: January 1, 2024</em></p>
+
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing or using Winnfield Talks, you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use this Platform.</p>
+
+            <h3>2. Account Registration</h3>
+            <p>You may register using only an email address. No real name is required. You are responsible for maintaining the security of your account credentials. One account per person. You must not share your account or register on behalf of another person without authorization.</p>
+
+            <h3>3. Usernames</h3>
+            <p>Usernames are randomly generated to protect your anonymity. You may not request a specific username that identifies, impersonates, or targets a real person.</p>
+
+            <h3>4. Prohibited Content</h3>
+            <p>You agree not to post:</p>
+            <ul>
+              <li>Content involving minors in any sexual, harmful, or identifying context</li>
+              <li>Private identifying information (home address, SSN, financial info) of others without consent</li>
+              <li>Credible threats of violence toward specific individuals or groups</li>
+              <li>Content that constitutes criminal harassment under Louisiana law</li>
+              <li>Spam, commercial solicitations, or automated posts</li>
+              <li>Content that infringes on copyright, trademarks, or other intellectual property</li>
+              <li>Malware, phishing links, or malicious code</li>
+            </ul>
+
+            <h3>5. Gossip, Opinion & Commentary</h3>
+            <p>Gossip, satire, opinion, and commentary about public figures and matters of public concern are generally protected speech. However, you are solely responsible for ensuring your posts do not cross into actionable defamation, harassment, or other unlawful speech. Label opinions clearly as opinions.</p>
+
+            <h3>6. Reporting & Moderation</h3>
+            <p>Users may report content that violates these Terms. We may investigate reports and remove content at our discretion. We are not obligated to monitor all content or to remove any specific content.</p>
+
+            <h3>7. Termination</h3>
+            <p>We may suspend or terminate accounts that repeatedly violate these Terms, are used for illegal activity, or are reported and confirmed to contain seriously harmful content.</p>
+
+            <h3>8. Disclaimer of Warranties</h3>
+            <p>The Platform is provided "AS IS" without warranties of any kind. We do not warrant the accuracy, reliability, or legality of user-posted content. We are not responsible for harm caused by user content.</p>
+
+            <h3>9. Limitation of Liability</h3>
+            <p>To the maximum extent permitted by law, Winnfield Talks shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the Platform or its content.</p>
+
+            <h3>10. Changes to Terms</h3>
+            <p>We may update these Terms at any time. Continued use of the Platform after changes constitutes acceptance of the updated Terms.</p>
+
+            <h3>11. Contact</h3>
+            <p>Legal inquiries and law enforcement requests: admin@winnfieldtalks.com</p>
+          </div>
+
+          <div class="disclaimer-checks">
+            <label class="check-item">
+              <input type="checkbox" id="tosCheck" />
+              <span class="checkmark"></span>
+              <span>I have read and agree to the <strong>Terms of Service</strong>.</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="btn btn-primary w-full btn-lg" id="step2Next" onclick="goToStep3()" disabled>
+          I Agree — Create My Account →
+        </button>
+        <button class="btn btn-ghost w-full" onclick="goToStep1()">← Back</button>
+      </div>
+
+      <!-- Step 3: Create Account -->
+      <div class="auth-step" id="step3">
+        <div class="auth-header">
+          <div class="step-indicator">
+            <span class="step done">✓</span>
+            <span class="step-line active"></span>
+            <span class="step done">✓</span>
+            <span class="step-line active"></span>
+            <span class="step active">3</span>
+          </div>
+          <h1 class="auth-title">Create Account</h1>
+          <p class="auth-sub">No real name needed — just your email</p>
+        </div>
+
+        <form class="auth-form" id="registerForm" onsubmit="submitRegister(event)">
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" id="regEmail" class="form-input" placeholder="you@example.com" required autocomplete="email" />
+            <p class="form-hint">Your email is never shown publicly. Used for account recovery only.</p>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <div class="input-reveal">
+              <input type="password" id="regPassword" class="form-input" placeholder="Min. 8 characters" required autocomplete="new-password" minlength="8" />
+              <button type="button" class="reveal-btn" onclick="toggleReveal('regPassword', this)">👁</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Confirm Password</label>
+            <div class="input-reveal">
+              <input type="password" id="regConfirm" class="form-input" placeholder="Repeat your password" required autocomplete="new-password" minlength="8" />
+              <button type="button" class="reveal-btn" onclick="toggleReveal('regConfirm', this)">👁</button>
+            </div>
+          </div>
+
+          <div class="anon-notice">
+            <span class="anon-icon">🎭</span>
+            <div>
+              <strong>Fully Anonymous Posting</strong>
+              <p>You'll receive a randomly generated username. Your real identity is never shared with other users.</p>
+            </div>
+          </div>
+
+          <div id="registerError" class="form-error hidden"></div>
+
+          <button type="submit" class="btn btn-primary w-full btn-lg" id="registerBtn">
+            Create Anonymous Account
+          </button>
+        </form>
+
+        <button class="btn btn-ghost w-full" onclick="goToStep2()">← Back</button>
+        <p class="auth-alt">Already have an account? <a href="/pages/login.html">Sign in</a></p>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/js/main.js"></script>
+  <script>
+    // Step navigation
+    function goToStep2() {
+      if (!document.getElementById('disclaimerCheck').checked ||
+          !document.getElementById('ageCheck').checked) return;
+      showStep(2);
+    }
+    function goToStep3() {
+      if (!document.getElementById('tosCheck').checked) return;
+      showStep(3);
+    }
+    function goToStep1() { showStep(1); }
+
+    function showStep(n) {
+      document.querySelectorAll('.auth-step').forEach(s => s.classList.remove('active'));
+      document.getElementById('step' + n).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    // Enable buttons when checkboxes are checked
+    document.getElementById('disclaimerCheck').addEventListener('change', updateStep1Btn);
+    document.getElementById('ageCheck').addEventListener('change', updateStep1Btn);
+    document.getElementById('tosCheck').addEventListener('change', function() {
+      document.getElementById('step2Next').disabled = !this.checked;
+    });
+
+    function updateStep1Btn() {
+      document.getElementById('step1Next').disabled = !(
+        document.getElementById('disclaimerCheck').checked &&
+        document.getElementById('ageCheck').checked
+      );
+    }
+
+    function toggleReveal(inputId, btn) {
+      const input = document.getElementById(inputId);
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    async function submitRegister(e) {
+      e.preventDefault();
+      const email = document.getElementById('regEmail').value.trim();
+      const password = document.getElementById('regPassword').value;
+      const confirm = document.getElementById('regConfirm').value;
+      const errEl = document.getElementById('registerError');
+      const btn = document.getElementById('registerBtn');
+
+      errEl.classList.add('hidden');
+      errEl.textContent = '';
+
+      if (password !== confirm) {
+        errEl.textContent = 'Passwords do not match.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Creating account...';
+
+      try {
+        const res = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            password,
+            tos_agreed: true,
+            disclaimer_agreed: true,
+            age_confirmed: true
+          })
+        });
+        const data = await res.json();
+
+        if (!res.ok) {
+          errEl.textContent = data.error || 'Registration failed.';
+          errEl.classList.remove('hidden');
+          btn.disabled = false;
+          btn.textContent = 'Create Anonymous Account';
+          return;
+        }
+
+        localStorage.setItem('wt_token', data.token);
+        localStorage.setItem('wt_user', JSON.stringify(data.user));
+        window.location.href = '/?registered=1&username=' + encodeURIComponent(data.user.username);
+      } catch (err) {
+        errEl.textContent = 'Network error. Please try again.';
+        errEl.classList.remove('hidden');
+        btn.disabled = false;
+        btn.textContent = 'Create Anonymous Account';
+      }
+    }
+  </script>
+</body>
+</html>
